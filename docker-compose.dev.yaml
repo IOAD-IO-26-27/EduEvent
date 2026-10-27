@@ -3,6 +3,9 @@ services:
         volumes:
             - ./backend:/app
         command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+        environment:
+            - PORT=8000
+            - DATABASE_URL=postgresql://${BACKEND_USER}:${BACKEND_PASSWORD}@db:5432/${POSTGRES_DB}
 
     frontend:
         build:
