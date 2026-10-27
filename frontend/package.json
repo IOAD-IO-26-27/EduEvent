@@ -6,7 +6,8 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "eslint"
+		"lint": "eslint",
+		"prepare": "cd .. && npx husky frontend/.husky"
 	},
 	"dependencies": {
 		"next": "16.4.0",
@@ -19,6 +20,10 @@
 		"@types/react-dom": "^19",
 		"eslint": "^9",
 		"eslint-config-next": "16.4.0",
+		"eslint-config-prettier": "^10.1.8",
+		"husky": "^9.1.7",
+		"lint-staged": "^17.6.0",
+		"prettier": "3.9.10",
 		"typescript": "^5"
 	},
 	"packageManager": "bun@1.3.11",
@@ -29,5 +34,14 @@
 	"trustedDependencies": [
 		"sharp",
 		"unrs-resolver"
-	]
+	],
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx}": [
+			"prettier --write",
+			"eslint --fix"
+		],
+		"*.{json,css,md,yaml,yml}": [
+			"prettier --write"
+		]
+	}
 }
