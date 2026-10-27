@@ -43,8 +43,8 @@
 		"*.{json,css,md,yaml,yml}": [
 			"prettier --write"
 		],
-		"backend/**/*.py": [
-			"black"
+		"../backend/**/*.py": [
+			"../.venv/bin/black"
 		]
 	}
 }
