@@ -6,6 +6,8 @@ Main EduEvent repo.
 
 To run this project you first need to have [docker](https://www.docker.com/) and [docker compose](https://docs.docker.com/compose/) installed.
 
+You also need to create a `.env` file in the project root with variables as defined in `.env.example` file.
+
 ### Dev
 
 Development mode allows you to start the project with HMR (Hot Module Reload) which allows you to see changes as soon as you save a project file.
@@ -27,6 +29,8 @@ docker compose -f docker-compose.yaml -f docker-compose.dev.yaml up
 To stop the containers you just exit from the process.
 
 When the containers are running you can access the Next.js frontend at `localhost:3000` and FastAPI backend at `localhost:8000`.
+
+For develpement you can use your own values for env variables in the `.env` file.
 
 Note that when you add any new dependency to `requirements.txt` you need to rebuild the containers.
 
