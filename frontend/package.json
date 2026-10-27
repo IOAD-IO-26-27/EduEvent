@@ -42,6 +42,9 @@
 		],
 		"*.{json,css,md,yaml,yml}": [
 			"prettier --write"
+		],
+		"backend/**/*.py": [
+			"black"
 		]
 	}
 }
